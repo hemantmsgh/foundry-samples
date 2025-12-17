@@ -1,3 +1,0 @@
-# Setup providers
-provider "azapi" {
-}

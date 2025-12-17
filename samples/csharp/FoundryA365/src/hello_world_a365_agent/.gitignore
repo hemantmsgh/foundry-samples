@@ -9,8 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.env
-venv/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -27,9 +26,11 @@ x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
+[Aa][Rr][Mm]64[Ee][Cc]/
 bld/
 [Bb]in/
 [Oo]bj/
+[Oo]ut/
 [Ll]og/
 [Ll]ogs/
 
@@ -156,6 +157,7 @@ coverage*.info
 
 # NCrunch
 _NCrunch_*
+.NCrunch_*
 .*crunch*.local.xml
 nCrunchTemp_*
 
@@ -208,12 +210,6 @@ PublishScripts/
 # NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
-
-# Java Files
-*.properties 
-*.class
-*.lst
-*.jar
 
 # Microsoft Azure Build Output
 csx/
@@ -361,6 +357,9 @@ ASALocalRun/
 # MSBuild Binary and Structured Log
 *.binlog
 
+# AWS SAM Build and Temporary Artifacts folder
+.aws-sam
+
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
@@ -387,6 +386,7 @@ FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
 .vscode/*
+!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
@@ -405,56 +405,11 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Ignore local deployment parameter fils
-*your.deployment.parameters.json
-samples/agent-catalog/msft-agent-samples/foundry-agent-service-sdk/exact-qna-agent/config.dev.yaml
-samples/agent-catalog/msft-agent-samples/foundry-agent-service-sdk/intent-routing-agent/config.dev.yaml
+# LocalEvalTool generated files - these are auto-generated from source code
+Evals/bin/LocalAgentConfig/
+Evals/bin/appsettings.json
+Evals/ResultsViewer/index.html
+Evals/reports/**/*.txt
 
-# python environments
-.venv
-
-# Terraform.gitignore
-
-# Local .terraform directories
-.terraform/
-
-# .tfstate files
-*.tfstate
-*.tfstate.*
-
-# Crash log files
-crash.log
-crash.*.log
-
-# Exclude all .tfvars files, which are likely to contain sensitive data, such as
-# password, private keys, and other secrets. These should not be part of version 
-# control as they are data points which are potentially sensitive and subject 
-# to change depending on the environment.
-*.tfvars
-*.tfvars.json
-!example*.tfvars
-!example*.tfvars.json
-
-# Ignore override files as they are usually used to override resources locally and so
-# are not checked in
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-# Ignore transient lock info files created by terraform apply
-.terraform.tfstate.lock.info
-*.lock.hcl
-
-# Include override files you do wish to add to version control using negated pattern
-# !example_override.tf
-
-# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
-# example: *tfplan*
-
-# Ignore CLI configuration files
-.terraformrc
-terraform.rc
-samples/microsoft/nul
-samples/microsoft/microsoft.sln
-samples/microsoft/developer-journey-stage-1-idea-to-prototype.md
+# Local publish directory
+publish
